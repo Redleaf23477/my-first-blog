@@ -1,20 +1,19 @@
 <html>
    <head>
-      <title>Django Girls blog</title>
+      <title>Redleaf blog</title>
    </head>
    <body>
       <div>
          <h1><a href="/">Redleaf Blog</a></h1>
       </div>
+
+      {% for post in posts %}
       <div>
-         <p>published: 14.06.2014, 12:14</p>
-         <h2><a href="">My first post</a></h2>
-         <p>Hello World</p>
+         <p>published: {{ post.published_date }}</p>
+         <h1><a href="">{{ post.title }}</a></h1>
+         <p>{{ post.text|linebreaksbr }}</p>
       </div>
-      <div>
-         <p>published: 14.06.2014, 12:14</p>
-         <h2><a href="">My second post</a></h2>
-         <p>FB 搜尋：彥斌的程設小教室</p>
-      </div>
+      {% endfor %}
+
    </body>
 </html>
